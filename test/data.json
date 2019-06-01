@@ -1,0 +1,68 @@
+{
+  "object_kind": "tag_push",
+  "event_name": "tag_push",
+  "before": "0000000000000000000000000000000000000000",
+  "after": "64fcbdfff69b955f317768f0d3cab836e589eff2",
+  "ref": "refs/tags/publish/1.688.0",
+  "checkout_sha": "64fcbdfff69b955f317768f0d3cab836e589eff2",
+  "message": "",
+  "user_id": 20,
+  "user_name": "肖东爽",
+  "user_username": "dongshuang.xiao",
+  "user_email": "",
+  "user_avatar": "https://dev.dingxiang-inc.com:2020/uploads/-/system/user/avatar/20/avatar.png",
+  "project_id": 50,
+  "project": {
+    "id": 50,
+    "name": "ctu-greenseer",
+    "description": "用户行为数据采集",
+    "web_url": "https://dev.dingxiang-inc.com:2020/ctu-group/ctu-greenseer",
+    "avatar_url": null,
+    "git_ssh_url": "ssh://git@dev.dingxiang-inc.com:2022/ctu-group/ctu-greenseer.git",
+    "git_http_url": "https://dev.dingxiang-inc.com:2020/ctu-group/ctu-greenseer.git",
+    "namespace": "ctu-group",
+    "visibility_level": 0,
+    "path_with_namespace": "ctu-group/ctu-greenseer",
+    "default_branch": "master",
+    "ci_config_path": null,
+    "homepage": "https://dev.dingxiang-inc.com:2020/ctu-group/ctu-greenseer",
+    "url": "ssh://git@dev.dingxiang-inc.com:2022/ctu-group/ctu-greenseer.git",
+    "ssh_url": "ssh://git@dev.dingxiang-inc.com:2022/ctu-group/ctu-greenseer.git",
+    "http_url": "https://dev.dingxiang-inc.com:2020/ctu-group/ctu-greenseer.git"
+  },
+  "commits": [
+    {
+      "id": "64fcbdfff69b955f317768f0d3cab836e589eff2",
+      "message": "auto build publish/1.688.0\n",
+      "timestamp": "2019-06-01T02:01:03Z",
+      "url": "https://dev.dingxiang-inc.com:2020/ctu-group/ctu-greenseer/commit/64fcbdfff69b955f317768f0d3cab836e589eff2",
+      "author": {
+        "name": "dongshuang.xiao",
+        "email": "dongshuang.xiao@dingxiang-inc.com"
+      },
+      "added": [
+
+      ],
+      "modified": [
+        "build/greenseer.js",
+        "src/config.json",
+        "src/encrypt.js"
+      ],
+      "removed": [
+
+      ]
+    }
+  ],
+  "total_commits_count": 1,
+  "push_options": {
+  },
+  "repository": {
+    "name": "ctu-greenseer",
+    "url": "ssh://git@dev.dingxiang-inc.com:2022/ctu-group/ctu-greenseer.git",
+    "description": "用户行为数据采集",
+    "homepage": "https://dev.dingxiang-inc.com:2020/ctu-group/ctu-greenseer",
+    "git_http_url": "https://dev.dingxiang-inc.com:2020/ctu-group/ctu-greenseer.git",
+    "git_ssh_url": "ssh://git@dev.dingxiang-inc.com:2022/ctu-group/ctu-greenseer.git",
+    "visibility_level": 0
+  }
+}
