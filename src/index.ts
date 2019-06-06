@@ -84,8 +84,9 @@ class Deploy extends EventEmitter {
 
     const engine = build.engine || this.engine || '8'
     const registry = build.registry || 'https://registry.dingxiang-inc.net'
+    const yarn = fs.existsSync(path.join(sourceDir, 'yarn.lock')) || build.yarn
     const install = [
-      build.yarn ? 'yarn' : 'npm i',
+      yarn ? 'yarn' : 'npm i',
       `--registry=${registry}`
     ].join(' ')
     const timezone = [
