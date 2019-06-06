@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "target": "es2017",
     "sourceMap": false,
+    "allowJs": true,
     "removeComments": true,
     "strictNullChecks": true,
     "noImplicitAny": true,

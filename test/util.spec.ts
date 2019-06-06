@@ -1,5 +1,5 @@
-import * as path from 'path'
-import * as fs from 'fs-extra'
+import path from 'path'
+import fs from 'fs-extra'
 import {
   randomStr,
   exec,
@@ -8,7 +8,7 @@ import {
   unzip
 } from  '../src/util'
 
-import data from './data.json'
+import data from './data'
 
 describe('util', () => {
 
@@ -61,7 +61,7 @@ describe('util', () => {
 
   test('unzip', async() => {
     const tgz = path.join(__dirname, 'test-archive.tgz')
-    const target = path.join(path.dirname(tgz), 'test-archive')
+    const target = tgz.replace('.tgz', '')
 
     await archive(data, tgz)
     await unzip(tgz, target)

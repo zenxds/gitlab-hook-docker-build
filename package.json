@@ -8,7 +8,7 @@
     "compile": "tsc --outDir lib",
     "lint": "eslint src/**/*.ts",
     "prettier": "prettier src/**/*.ts --write",
-    "test": "jest ."
+    "test": "jest test"
   },
   "husky": {
     "hooks": {

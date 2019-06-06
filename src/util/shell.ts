@@ -1,7 +1,8 @@
-import * as path from 'path'
-import * as shell from 'shelljs'
-import * as fs from 'fs-extra'
+import os from 'os'
+import path from 'path'
 import { ChildProcess } from 'child_process'
+import shell from 'shelljs'
+import fs from 'fs-extra'
 import { BaseHookData } from '../types'
 
 interface ExecReturn {
@@ -22,7 +23,7 @@ export function exec(cmd: string, options?: shell.ExecOptions): ExecReturn {
   let promise = new Promise((resolve, reject) => {
     child = shell.exec(cmd, execOptions, function(code, stdout, stderr) {
       if (code !== 0) {
-        throw new Error(`${code}: ${stderr}`)
+        reject(new Error(`${code}: ${stderr}`))
       } else {
         resolve(stdout)
       }
@@ -57,11 +58,12 @@ export async function archive(data: BaseHookData, dest: string): Promise<void> {
  * https://serverfault.com/questions/147787/how-to-update-a-symbolic-link-target-ln-f-s-not-working
  * readlink命令
  */
-export async function link(target: string, linkName: string): Promise<void> {
+export async function link(target: string, linkName: string, options?: shell.ExecOptions): Promise<void> {
   // 如果linkName是一个实际的目录（非链接目录），先删除掉，使用lstatSync可以区分普通目录和链接目录
   if (fs.existsSync(linkName) && fs.lstatSync(linkName).isDirectory()) {
     fs.removeSync(linkName)
   }
 
-  await exec(`ln -sfT ${target} ${linkName}`).promise
+  const isMac = os.platform() === 'darwin'
+  await exec(`ln ${isMac ? '-sfn' : '-sfT'} ${target} ${linkName}`, options).promise
 }

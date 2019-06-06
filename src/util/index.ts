@@ -1,4 +1,4 @@
-import * as fs from 'fs'
+import fs from 'fs'
 
 export function randomStr(length: number): string {
   let str = ''

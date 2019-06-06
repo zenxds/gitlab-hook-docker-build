@@ -1,5 +1,5 @@
-import * as fs from 'fs-extra'
-import * as tar from 'tar'
+import fs from 'fs-extra'
+import tar from 'tar'
 
 export async function unzip(src: string, dest: string): Promise<void> {
   fs.ensureDirSync(dest)
