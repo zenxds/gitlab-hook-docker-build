@@ -83,7 +83,7 @@ class Deploy extends EventEmitter {
     }
 
     const engine = build.engine || this.engine || '8'
-    const registry = build.registry || 'https://registry.dingxiang-inc.net'
+    const registry = build.registry || 'https://registry.dingxiang-inc.com'
     const yarn = fs.existsSync(path.join(sourceDir, 'yarn.lock')) || build.yarn
     const install = [
       yarn ? 'yarn' : 'npm i',
@@ -123,13 +123,12 @@ class Deploy extends EventEmitter {
         data.checkout_sha
       )
     }
-
-    // 可以在外部进行修改目标目录和实际目录，适配不同场景
+    // 可以在外部进行修改目标目录和实际目录，适配不同场景，一般不需要修改
     this.emit('sync', emitData)
 
     const { target, actual } = emitData
-    let linkPath = ''
 
+    let linkPath = ''
     try {
       linkPath = fs.readlinkSync(target)
     } catch (err) {}
@@ -155,7 +154,8 @@ class Deploy extends EventEmitter {
     // 交由外部去处理删除之类的逻辑，比如下面这段删除旧代码
     this.emit('sync.after', {
       beforePath: linkPath ? path.resolve(cwd, linkPath) : '',
-      afterPath: actual
+      afterPath: actual,
+      data
     })
 
     // 删除旧代码

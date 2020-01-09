@@ -1,6 +1,6 @@
 {
   "name": "gitlab-hook-docker-deploy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "gitlab-hook-docker-deploy",
   "main": "lib/index.js",
   "scripts": {

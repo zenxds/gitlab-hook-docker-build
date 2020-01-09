@@ -1,3 +1,3 @@
-# node-lib-boilerplate
+# gitlab-hook-docker-build
 
-node lib boilerplate
+gitlab hook docker build
